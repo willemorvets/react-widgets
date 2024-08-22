@@ -634,13 +634,6 @@ Calendar.displayName = 'Calendar'
 
 Calendar.propTypes = propTypes
 
-// Calendar.defaultProps = {
-//   min: new Date(1900, 0, 1),
-//   max: new Date(2099, 11, 31),
-//   views: VIEW_OPTIONS,
-//   tabIndex: '0',
-// }
-
 Calendar.Transition = SlideTransitionGroup
 
 Calendar.move = (

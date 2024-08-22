@@ -166,15 +166,6 @@ let propTypes = {
   }),
 }
 
-const defaultProps = {
-  ...(Calendar as any).defaultProps,
-
-  min: new Date(1900, 0, 1),
-  max: new Date(2099, 11, 31),
-  selectIcon: calendar,
-  formats: {},
-}
-
 export interface DatePickerProps<TLocalizer = unknown>
   extends Omit<WidgetHTMLProps, 'onChange' | 'defaultValue'>,
     Omit<WidgetProps, 'onChange' | 'onSelect' | 'defaultValue'> {
@@ -346,16 +337,16 @@ const DatePicker = React.forwardRef(
       valueEditFormat = valueFormat,
       containerClassName,
       name,
-      selectIcon,
+      selectIcon = calendar,
       placeholder,
       includeTime = false,
-      min,
-      max,
+      min = new Date(1900, 0, 1),
+      max = new Date(2099, 11, 31),
       open,
       dropUp,
       parse,
       messages,
-      formats,
+      formats = {},
       currentDate,
       popupTransition,
       popupComponent: Popup = BasePopup,
@@ -623,6 +614,5 @@ const DatePicker = React.forwardRef(
 
 DatePicker.displayName = 'DatePicker'
 DatePicker.propTypes = propTypes as any
-DatePicker.defaultProps = defaultProps
 
 export default DatePicker
